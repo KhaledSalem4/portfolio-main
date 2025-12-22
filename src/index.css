@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+
+/* 3D Perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Design System - Dark Red Portfolio Theme
+  Color tokens as CSS variables for easy customization
+*/
+
+@layer base {
+  :root {
+    /* Light mode - clean and professional */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
+    --bg: 0 0% 98%;
+    --text: 220 9% 46%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    /* Dark red as primary */
+    --primary: 0 100% 27%;
+    --primary-foreground: 0 0% 98%;
+    --red: 0 100% 27%;
+    --red-hover: 0 85% 35%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 100% 27%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 100% 27%;
+
+    --radius: 0.5rem;
+    
+    /* Design tokens */
+    --glow-primary: 0 0 40px hsl(0 100% 27% / 0.3);
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.08);
+    --shadow-medium: 0 8px 30px -4px hsl(0 0% 0% / 0.12);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 0 100% 27%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 100% 27%;
+  }
+
+  .dark {
+    /* Dark mode - #0B0B0C background with dark red accents */
+    --background: 0 0% 4%;
+    --foreground: 220 13% 96%;
+    --bg: 0 0% 4%;
+    --text: 220 13% 96%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 220 13% 96%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 220 13% 96%;
+
+    /* Dark red primary #8B0000 */
+    --primary: 0 100% 27%;
+    --primary-foreground: 220 13% 96%;
+    --red: 0 100% 27%;
+    --red-hover: 0 85% 35%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 220 13% 96%;
+
+    /* Muted #1A1A1B */
+    --muted: 0 0% 10%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 0 100% 27%;
+    --accent-foreground: 220 13% 96%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 220 13% 96%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 100% 27%;
+    
+    /* Dark mode design tokens - Enhanced glow */
+    --glow-primary: 0 0 80px hsl(0 100% 27% / 0.6);
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.5);
+    --shadow-medium: 0 8px 30px -4px hsl(0 0% 0% / 0.6);
+    
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 220 13% 96%;
+    --sidebar-primary: 0 100% 27%;
+    --sidebar-primary-foreground: 220 13% 96%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 220 13% 96%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 100% 27%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+
+  /* Code syntax highlighting dark theme */
+  pre, code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  pre {
+    @apply bg-muted rounded-lg p-4 overflow-x-auto;
+  }
+
+  code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm;
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Animated Background */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-30px) translateX(20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-15px) translateX(-20px) rotate(240deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: blur(50px);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(70px);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+}
+
+.animated-bg::before,
+.animated-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.animated-bg::before {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.5), hsl(var(--primary) / 0.2) 50%, transparent 70%);
+  top: -150px;
+  right: -150px;
+  animation: float 18s ease-in-out infinite, pulse-glow 7s ease-in-out infinite;
+  filter: blur(60px);
+}
+
+.animated-bg::after {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.45), hsl(var(--primary) / 0.15) 50%, transparent 70%);
+  bottom: -200px;
+  left: -200px;
+  animation: float 22s ease-in-out infinite reverse, pulse-glow 9s ease-in-out infinite;
+  filter: blur(60px);
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.6), hsl(var(--primary) / 0.3) 40%, transparent 70%);
+  animation: pulse-glow 6s ease-in-out infinite;
+  pointer-events: none;
+  filter: blur(55px);
+  will-change: transform, opacity;
+}
