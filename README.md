@@ -117,4 +117,4 @@ Software Engineer
 
 ---
 
-Made with ❤️ using React + TypeScript + Tailwind CSS
+ using React + TypeScript + Tailwind CSS
