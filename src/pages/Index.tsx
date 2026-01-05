@@ -1,12 +1,24 @@
 import { Helmet } from "react-helmet-async";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import Blog from "@/components/Blog";
-import Contact from "@/components/Contact";
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+
+// Lazy load components that are below the fold
+const Education = lazy(() => import("@/components/Education"));
+const Projects = lazy(() => import("@/components/Projects"));
+const Skills = lazy(() => import("@/components/Skills"));
+const Experience = lazy(() => import("@/components/Experience"));
+const Certificates = lazy(() => import("@/components/Certificates"));
+const Blog = lazy(() => import("@/components/Blog"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
+
+// Simple loading fallback
+const LoadingFallback = () => (
+  <div className="min-h-[200px] flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const Index = () => {
   return (
@@ -21,12 +33,30 @@ const Index = () => {
       <main className="min-h-screen bg-background">
         <Navbar />
         <Hero />
-        <Projects />
-        <Skills />
-        <Experience />
-        <Blog />
-        <Contact />
-        <Footer />
+        <Suspense fallback={<LoadingFallback />}>
+          <Education />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <Projects />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <Skills />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <Experience />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <Certificates />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <Blog />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <Contact />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <Footer />
+        </Suspense>
       </main>
     </>
   );

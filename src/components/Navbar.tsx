@@ -6,10 +6,11 @@ import Logo from "./Logo";
 
 const navLinks = [
   { name: "Home", href: "#" },
+  { name: "Education", href: "#education" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
-  { name: "Blog", href: "#blog" },
+  { name: "Internships", href: "#experience" },
+  { name: "Certificates", href: "#certificates" },
   { name: "Contact", href: "#contact" },
 ];
 

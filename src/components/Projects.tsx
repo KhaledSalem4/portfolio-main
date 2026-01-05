@@ -6,7 +6,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import brightmindImage from "@/assets/brightmind-project.jpg";
-import graduationImage from "@/assets/graduation-project.jpg";
+import ecommerceImage from "@/assets/ecommerce-api.svg";
 import greenzoneImage from "@/assets/greenzone-project.jpg";
 
 const projects = [
@@ -20,13 +20,13 @@ const projects = [
     image: brightmindImage,
   },
   {
-    title: "Graduation Project",
-    description: "Enterprise-level web application built during ITI intensive training. Following Agile methodology and best practices in software architecture.",
-    tags: ["ASP.NET Core", "Angular", "Entity Framework", "SQL Server"],
-    type: "Full Stack Development",
-    repoUrl: "https://github.com/KhaledSalem4/Graduation-Project",
+    title: "E-Commerce API",
+    description: "A robust, scalable REST API for a complete e-commerce platform. Features JWT authentication, role-based access control, product & category management, reviews system, and Stripe payment integration. Built following industry best practices with proper middleware implementation and security measures.",
+    tags: ["Node.js", "Express.js", "MongoDB", "JWT", "Stripe"],
+    type: "Backend Development",
+    repoUrl: "https://github.com/KhaledSalem4/E-Commerce-API",
     demoUrl: null,
-    image: graduationImage,
+    image: ecommerceImage,
   },
   {
     title: "GreenZone - Recycling System",

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
-import profileImage from "@/assets/khaled-profile.jpg";
+import profileImage from "@/assets/khaled-creativa.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 // Tech icons as simple components
 const techIcons = [
@@ -16,56 +16,13 @@ const techIcons = [
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Animated programming background image */}
-      <motion.div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      {/* Static background image for better performance */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{ backgroundImage: `url(${heroBg})` }}
-        animate={{ 
-          scale: [1, 1.05, 1],
-          opacity: [0.4, 0.5, 0.4]
-        }}
-        transition={{ 
-          duration: 20, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
       />
-      {/* Animated gradient overlay */}
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/20"
-        animate={{
-          opacity: [0.85, 0.9, 0.85]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-primary/30 rounded-full"
-            style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 0.7, 0.3],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 4 + i,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5,
-            }}
-          />
-        ))}
-      </div>
+      {/* Static gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/20 opacity-90" />
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Text content */}
@@ -129,12 +86,18 @@ const Hero = () => {
                 size="lg"
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary/10 font-medium group"
-                asChild
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/Khaled_Salem_CV.pdf';
+                  link.download = 'Khaled_Salem_CV.pdf';
+                  link.target = '_blank';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
-                <a href="/Khaled_Salem_CV.pdf" download="Khaled_Salem_CV.pdf">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download CV
-                </a>
+                <Download className="mr-2 h-5 w-5" />
+                Download CV
               </Button>
             </motion.div>
 

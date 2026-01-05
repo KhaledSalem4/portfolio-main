@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#68A063;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3C873A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mongoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4DB33D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3F9C35;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.1" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+  </g>
+  
+  <!-- API Server Box -->
+  <rect x="300" y="150" width="200" height="200" rx="15" fill="url(#apiGrad)" opacity="0.9"/>
+  <text x="400" y="230" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">REST API</text>
+  <text x="400" y="260" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" opacity="0.9">E-Commerce</text>
+  
+  <!-- API Endpoints -->
+  <g fill="#ffffff" font-family="monospace" font-size="11" opacity="0.8">
+    <text x="400" y="290" text-anchor="middle">/api/products</text>
+    <text x="400" y="305" text-anchor="middle">/api/auth</text>
+    <text x="400" y="320" text-anchor="middle">/api/orders</text>
+    <text x="400" y="335" text-anchor="middle">/api/users</text>
+  </g>
+  
+  <!-- Node.js Logo (left) -->
+  <circle cx="120" cy="250" r="60" fill="url(#nodeGrad)"/>
+  <text x="120" y="245" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Node.js</text>
+  <text x="120" y="265" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Express</text>
+  
+  <!-- MongoDB Logo (right) -->
+  <circle cx="680" cy="250" r="60" fill="url(#mongoGrad)"/>
+  <text x="680" y="245" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">MongoDB</text>
+  <text x="680" y="265" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Database</text>
+  
+  <!-- Connection Lines -->
+  <line x1="180" y1="250" x2="300" y2="250" stroke="#68A063" stroke-width="3" stroke-dasharray="10,5"/>
+  <line x1="500" y1="250" x2="620" y2="250" stroke="#4DB33D" stroke-width="3" stroke-dasharray="10,5"/>
+  
+  <!-- JWT Token (top) -->
+  <rect x="340" y="60" width="120" height="50" rx="10" fill="#f59e0b" opacity="0.9"/>
+  <text x="400" y="90" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🔐 JWT</text>
+  <line x1="400" y1="110" x2="400" y2="150" stroke="#f59e0b" stroke-width="2"/>
+  
+  <!-- Stripe Payment (bottom) -->
+  <rect x="340" y="390" width="120" height="50" rx="10" fill="#635bff" opacity="0.9"/>
+  <text x="400" y="420" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">💳 Stripe</text>
+  <line x1="400" y1="350" x2="400" y2="390" stroke="#635bff" stroke-width="2"/>
+  
+  <!-- Feature badges -->
+  <rect x="50" y="380" width="100" height="30" rx="5" fill="#ef4444" opacity="0.8"/>
+  <text x="100" y="400" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Auth</text>
+  
+  <rect x="160" y="380" width="100" height="30" rx="5" fill="#3b82f6" opacity="0.8"/>
+  <text x="210" y="400" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Products</text>
+  
+  <rect x="540" y="380" width="100" height="30" rx="5" fill="#10b981" opacity="0.8"/>
+  <text x="590" y="400" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Categories</text>
+  
+  <rect x="650" y="380" width="100" height="30" rx="5" fill="#f59e0b" opacity="0.8"/>
+  <text x="700" y="400" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Reviews</text>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="bold" opacity="0.9">Node.js E-Commerce REST API</text>
+  
+  <!-- Bottom text -->
+  <text x="400" y="475" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" opacity="0.6">Full-featured backend with authentication, payments, and more</text>
+</svg>

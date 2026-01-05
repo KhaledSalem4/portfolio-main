@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-const experiences = [
+const internships = [
   {
     title: ".NET Full Stack Developer",
     company: "Information Technology Institute (ITI)",
-    location: "Port Said Branch",
+    location: "Port Said, Egypt",
     period: "July 2025 - Nov 2025",
     points: [
       "Completed intensive training program focused on full-stack .NET development",
@@ -17,42 +17,28 @@ const experiences = [
     tech: ["ASP.NET Core", "Angular", "SQL Server", "Entity Framework"],
   },
   {
-    title: "Frontend Developer",
-    company: "BrightMind E-Learning Platform",
-    location: "Freelance Project",
-    period: "2024",
+    title: "Information Systems and Database Management",
+    company: "Port Said Container and Cargo Handling Co. (PSCCHC)",
+    location: "Port Said, Egypt",
+    period: "July 2023 - Aug 2023",
     points: [
-      "Designed and developed responsive web-based learning platform",
-      "Built all UI components from scratch using vanilla HTML, CSS, JavaScript",
-      "Implemented interactive educational content features",
-      "Achieved 100% mobile responsiveness across all devices",
+      "Gained hands-on experience in information systems management",
+      "Worked with database management and administration",
+      "Learned enterprise-level IT infrastructure operations",
     ],
-    tech: ["HTML5", "CSS3", "JavaScript", "UI/UX"],
+    tech: ["Database Management", "Information Systems", "IT Operations"],
   },
   {
-    title: "Backend Developer",
-    company: "Suez Canal University",
-    location: "Graduation Project",
-    period: "May 2024",
-    points: [
-      "Developed RESTful APIs for library management system",
-      "Implemented secure JWT authentication and role-based access",
-      "Integrated MongoDB for efficient data storage and retrieval",
-      "Deployed on cloud infrastructure with CI/CD pipeline",
-    ],
-    tech: ["Node.js", "Express.js", "MongoDB", "JWT"],
-  },
-  {
-    title: "Java & OOP Training",
+    title: "Java & Object-Oriented Programming",
     company: "Information Technology Institute (ITI)",
     location: "Ismailia, Egypt",
-    period: "Summer 2022",
+    period: "June 2022 - Aug 2022",
     points: [
       "Completed intensive Java programming fundamentals course",
       "Mastered Object-Oriented Programming principles and patterns",
       "Built console and GUI applications with multithreading",
     ],
-    tech: ["Java", "OOP", "Multithreading"],
+    tech: ["Java", "OOP", "Threads"],
   },
 ];
 
@@ -71,10 +57,10 @@ const Experience = () => {
         >
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Experience
+              Internships
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Professional journey and training highlights
+              Professional training and internship experience
             </p>
           </div>
 
@@ -82,7 +68,7 @@ const Experience = () => {
             {/* Timeline line */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
-            {experiences.map((exp, index) => (
+            {internships.map((exp, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
